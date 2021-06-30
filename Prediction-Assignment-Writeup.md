@@ -60,10 +60,6 @@ corrMat <- cor(train[,-54])
 corrplot(corrMat, method = "color", type = "lower", tl.cex = 0.8, tl.col = rgb(0,0,0))
 ```
 
-![](Prediction-Assignment-Writeup/files/correlationplot1.png)<!-- -->
-
-In the plot above, darker gradient correspond to having high correlation. A Principal Component Analysis can be run to further reduce the correlated variables but we aren't doing that due to the number of correlations being quite few.
-
 ## Prediction Model Selection
 
 We will use 3 methods to model the training set and thereby choose the one having the best accuracy to predict the outcome variable in the testing set. The methods are Decision Tree, Random Forest and Generalized Boosted Model.
@@ -81,8 +77,6 @@ set.seed(13908)
 modelDT <- rpart(classe ~ ., data = train, method = "class")
 fancyRpartPlot(modelDT)
 ```
-
-![](Prediction-Assignment-Writeup/files/DecisionTree-1.png)<!-- -->
 
 ```r
 predictDT <- predict(modelDT, test, type = "class")
