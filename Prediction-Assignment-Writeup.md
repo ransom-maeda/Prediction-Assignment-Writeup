@@ -60,7 +60,7 @@ corrMat <- cor(train[,-54])
 corrplot(corrMat, method = "color", type = "lower", tl.cex = 0.8, tl.col = rgb(0,0,0))
 ```
 
-![](Practical-Machine-Learning-Assignment-1_files/figure-html/CorrelationPlot-1.png)<!-- -->
+![](Prediction-Assignment-Writeup/files/correlationplot-1.png)<!-- -->
 
 In the plot above, darker gradient correspond to having high correlation. A Principal Component Analysis can be run to further reduce the correlated variables but we aren't doing that due to the number of correlations being quite few.
 
@@ -82,7 +82,7 @@ modelDT <- rpart(classe ~ ., data = train, method = "class")
 fancyRpartPlot(modelDT)
 ```
 
-![](Practical-Machine-Learning-Assignment-1_files/figure-html/DecisionTree-1.png)<!-- -->
+![](PredictionAssignmentWriteup/files/DecisionTree-1.png)<!-- -->
 
 ```r
 predictDT <- predict(modelDT, test, type = "class")
